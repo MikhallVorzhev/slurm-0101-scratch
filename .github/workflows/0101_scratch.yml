@@ -32,7 +32,7 @@ jobs:
       - name: Clear Docker cache
         run: docker builder prune --all
 
-
+       
       - name: Telegram sender
   # You may pin to the exact commit or the version.
   # uses: robotomize/notify-telegram@f2821d117115d48ccbbde7609d2029603ee55b7e
@@ -46,8 +46,3 @@ jobs:
           status: Deployed by ${{ secrets.MY_USERNAME }} 
     # Custom message
           message: Image name is simple text             ${{ github.actor }} created commit:
-                   Commit message: ${{ github.event.commits[0].message }}
-            
-                   Repository: ${{ github.repository }}
-            
-                   See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
